@@ -20,16 +20,19 @@ public class MovimientoSencillo : MonoBehaviour
         miRigidBody = GetComponent<Rigidbody>();
     }
 
+    private void FixedUpdate()
+    {
+       
+        Vector3 m_Input = new Vector3(-Input.GetAxis("Vertical"), 0, Input.GetAxis("Horizontal"));
+
+        
+        miRigidBody.MovePosition(transform.position + m_Input * Time.deltaTime * velocidad);
+
+
+    }
+
     private void Update()
     {
-        vertical = Input.GetAxis("Vertical") * velocidad * Time.deltaTime;
-        horizontal = Input.GetAxis("Horizontal") * velocidad * Time.deltaTime;
-
-        transform.Translate(horizontal, 0, 0);
-        transform.Translate(0, 0, vertical);
-
-
-
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
 
@@ -82,10 +85,6 @@ public class MovimientoSencillo : MonoBehaviour
 
 
         }
-
-
-
     }
-
 
 }
