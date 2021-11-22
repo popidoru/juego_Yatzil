@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Objetos : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Objetos : MonoBehaviour
     private BoxCollider miBC;
     private GameObject esteObjeto;
     public bool sePuedeAgarrar;
+    public TMP_Text textoInstruccion;
+    public GameObject instruccion;
     
 
     // Start is called before the first frame update
@@ -22,6 +25,7 @@ public class Objetos : MonoBehaviour
         miRB = this.gameObject.GetComponent<Rigidbody>();
         miBC = this.gameObject.GetComponent<BoxCollider>();
         esteObjeto = this.gameObject;
+        sePuedeAgarrar = false;
     }
 
     // Update is called once per frame
@@ -33,10 +37,7 @@ public class Objetos : MonoBehaviour
         {
 
 
-            if (Input.GetKeyDown("space"))
-            {
-                print("space key was pressed");
-            }
+            
 
 
 
@@ -55,6 +56,7 @@ public class Objetos : MonoBehaviour
                     esteObjeto.layer = 5;
                     esteObjeto.AddComponent<RectTransform>();
                     sePuedeAgarrar = false;
+                    instruccion.SetActive(false);
 
                 }
                 else
@@ -80,7 +82,21 @@ public class Objetos : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         sePuedeAgarrar = true;
+
+        instruccion.SetActive(true);
+
+        textoInstruccion.text = "Recoger [E]";
+
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+       
 
+        instruccion.SetActive(false);
+        sePuedeAgarrar = false;
+
+        
+
+    }
 }
