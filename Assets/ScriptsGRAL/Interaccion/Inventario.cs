@@ -18,8 +18,7 @@ public class Inventario : MonoBehaviour
     public GameObject canvas;
     public Transform camara_inventario;
     public Transform[] items; // TODOS LOS OBJETOS EN EL INVENTARIO CON EL INVENTARIO
-    private int contador;
-
+    
     public int itemsQty; // CANTIDAD DE HIJOS EN EL INVENTARIO
 
     public List<Transform> new_items;// TODOS LOS OBJETOS EN EL INVENTARIO SIN EL INVENTARIO

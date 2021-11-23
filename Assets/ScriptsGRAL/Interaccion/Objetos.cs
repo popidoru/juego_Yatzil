@@ -99,4 +99,12 @@ public class Objetos : MonoBehaviour
         
 
     }
+
+    private void Colocar()
+    {
+
+
+        // adopte la posicion indicada en el box collider del punto clave
+
+    }
 }

@@ -85,6 +85,15 @@ public class MovimientoSencillo : MonoBehaviour
 
 
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+
+            miAnimator.SetTrigger("Recoger");
+
+
+
+        }
     }
 
 }

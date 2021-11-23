@@ -43,7 +43,19 @@ public class TxtBxContJUEGO : MonoBehaviour
         }
 
 
-        ElTexto.text = lineasTexto[lineaAhora]; //el texto dentro del objeto de texto se va a ir llenando dependendiendo de la linea de texto actual (empieza en el 0 del array)
+        
+
+     
+
+        if(lineasTexto.Length > 0)
+        {
+
+            ElTexto.text = lineasTexto[lineaAhora]; //el texto dentro del objeto de texto se va a ir llenando dependendiendo de la linea de texto actual (empieza en el 0 del array)
+            endAtLine = lineasTexto.Length - 1;
+
+        }
+
+
 
 
 
@@ -66,18 +78,19 @@ public class TxtBxContJUEGO : MonoBehaviour
 
 
 
-        if (endAtLine == 0)
+       /* if (endAtLine == 0)
         {
-            endAtLine = lineasTexto.Length - 1; //para que siempre aparezcan y no se confundan con el 0 del array
+           // endAtLine = lineasTexto.Length - 1; //para que siempre aparezcan y no se confundan con el 0 del array
+            //lineaAhora = endAtLine;
+        } */
 
-        }
 
         if (lineaAhora > endAtLine)
         {
            
             cajaTexto.SetActive(false);
             barras[0].GetComponent<Animator>().SetTrigger("Bajan");
-            barras[1].GetComponent<Animator>().SetTrigger("Bajan");
+           barras[1].GetComponent<Animator>().SetTrigger("Bajan");
         }
 
         if (cajaTexto.activeSelf == false)
