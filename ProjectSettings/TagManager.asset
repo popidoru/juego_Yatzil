@@ -6,6 +6,8 @@ TagManager:
   tags:
   - CinemachineTarget
   - Foto1
+  - punto1
+  - Inventario
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - Objetos
   - Water
   - UI
-  - 
+  - PuntosClave
   - 
   - 
   - 
