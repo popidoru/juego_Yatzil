@@ -6,8 +6,9 @@ TagManager:
   tags:
   - CinemachineTarget
   - Foto1
-  - punto1
+  - PuzzlePadres
   - Inventario
+  - punto1
   layers:
   - Default
   - TransparentFX
