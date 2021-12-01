@@ -18,7 +18,7 @@ public class Inventario : MonoBehaviour
     public GameObject canvas;
     public Transform camara_inventario;
     public Transform[] items; // TODOS LOS OBJETOS EN EL INVENTARIO CON EL INVENTARIO
-    
+
     public int itemsQty; // CANTIDAD DE HIJOS EN EL INVENTARIO
 
     public List<Transform> new_items;// TODOS LOS OBJETOS EN EL INVENTARIO SIN EL INVENTARIO
@@ -29,58 +29,51 @@ public class Inventario : MonoBehaviour
         inventario = this.transform;
         itemsQty = inventario.childCount;
         this.gameObject.GetComponent<Animator>().SetBool("abreInventario", false);
-       
+
         //hand = player.hand;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
 
 
             this.gameObject.GetComponent<Animator>().SetBool("abreInventario", !this.gameObject.GetComponent<Animator>().GetBool("abreInventario"));
-           
+
 
 
         }
 
 
-        SelfUpdate();
+        // SelfUpdate();
 
 
         if (this.gameObject.GetComponent<Animator>().GetBool("abreInventario") == true)
-       
+
         {
 
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                idx--;
-                if (idx < 0)
-                {
-                    idx = 0;
-                }
-                camara_inventario.localPosition = new Vector3(idx * distance, 0, camara_inventario.localPosition.z);
-            }
+
             if (Input.GetKeyDown(KeyCode.E))
             {
-                idx++;
-                if (idx >= new_items.Count)
-                {
-                    idx = new_items.Count - 1;
-                }
+                /* idx++;
+                 if (idx >= new_items.Count)
+                 {
+                     idx = new_items.Count - 1;
+                 } */
                 camara_inventario.localPosition = new Vector3(idx * distance, 0, camara_inventario.localPosition.z);
             }
 
-           
+
 
 
         }
 
     }
+}
 
     /* void Equipar()
     {
@@ -105,7 +98,7 @@ public class Inventario : MonoBehaviour
 
   
 
-    void SelfUpdate()
+   /* void SelfUpdate()
     {
         if (inventario.childCount != itemsQty) // SI LA CANTIDAD DE HIJOS ES DIFERENTE CON RESPECTO A UN PUNTO ANTERIOR
         {
@@ -134,6 +127,5 @@ public class Inventario : MonoBehaviour
             items[i].localRotation = Quaternion.Euler(0, 0, 0);
 
         }
-    }
+    } */
 
-}

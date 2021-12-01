@@ -12,7 +12,8 @@ public class Objetos : MonoBehaviour
     private BoxCollider miBC;
     private GameObject esteObjeto;
     public bool sePuedeAgarrar;
-    public TMP_Text textoInstruccion;
+    public static bool sePuedePoner;
+    private TMP_Text textoInstruccion;
     public GameObject instruccion;
     
 
@@ -26,12 +27,19 @@ public class Objetos : MonoBehaviour
         miBC = this.gameObject.GetComponent<BoxCollider>();
         esteObjeto = this.gameObject;
         sePuedeAgarrar = false;
+
+        instruccion = GameObject.Find("Canvas/Instruccion");
+
+      
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
 
         if (sePuedeAgarrar == true)
         {
@@ -50,22 +58,34 @@ public class Objetos : MonoBehaviour
                 {
 
                   
-                    GameObject Inv = GameObject.Find("Canvas/Inventario");
+                    GameObject Inv = GameObject.Find("Viewport/Content");
 
                     esteObjeto.transform.parent = Inv.transform;
                     esteObjeto.layer = 5;
                     esteObjeto.AddComponent<RectTransform>();
                     sePuedeAgarrar = false;
                     instruccion.SetActive(false);
+                    esteObjeto.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    esteObjeto.transform.localPosition = new Vector3(0, 0, -1);
+                    sePuedePoner = true;
 
-                }
-                else
-
+                } else
                 {
 
-                    //aqui va usar el game object del inventario en un punto clave o inspeccionarlo, pero no se puede sacar si no estas en un punto clave, presionar la key tendria que no hacer nada
+                  /*  if (esteObjeto.transform.parent.tag == "PuntosClave")
+                    {
+
+                        sePuedeAgarrar = true;
+                        instruccion.SetActive(true);
+                        textoInstruccion = instruccion.GetComponent<TMP_Text>();
+
+                        textoInstruccion.text = "Recoger [E]";
+
+
+                    } */
 
                 }
+               
 
 
 
@@ -81,11 +101,18 @@ public class Objetos : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
+
+        
         sePuedeAgarrar = true;
 
         instruccion.SetActive(true);
 
+        textoInstruccion = instruccion.GetComponent<TMP_Text>();
+
         textoInstruccion.text = "Recoger [E]";
+
+       
+
 
     }
 
@@ -95,16 +122,26 @@ public class Objetos : MonoBehaviour
 
         instruccion.SetActive(false);
         sePuedeAgarrar = false;
-
+        sePuedePoner = false;
         
 
     }
 
-    private void Colocar()
+    public void Colocar()
     {
 
+        esteObjeto.transform.SetParent(MovimientoSencillo.posicionClave.transform);
 
-        // adopte la posicion indicada en el box collider del punto clave
+        esteObjeto.layer = 3;
 
+        sePuedeAgarrar = true;
+
+        esteObjeto.transform.rotation = Quaternion.Euler(0, -90, 0);
+
+        esteObjeto.transform.localPosition = new Vector3(0, 0, 0);
+
+        sePuedePoner = false;
+
+        print("si esta corriendo el evento");
     }
 }

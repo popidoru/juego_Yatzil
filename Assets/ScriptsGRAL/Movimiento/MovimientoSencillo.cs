@@ -11,6 +11,8 @@ public class MovimientoSencillo : MonoBehaviour
     private Animator miAnimator;
     private SpriteRenderer miSpriteRenderer;
     private Rigidbody miRigidBody;
+    public static Transform posicionClave;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -95,5 +97,45 @@ public class MovimientoSencillo : MonoBehaviour
 
         }
     }
+
+
+    private void OnCollisionStay(Collision collision)
+    {
+
+        if (collision.gameObject.layer == 6)
+        {
+           // print("hice colision con un punto clave");
+
+            
+
+                posicionClave = collision.gameObject.transform.GetChild(0);
+               // print("se guardo la posicion de donde va el objeto del punto clave");
+
+            
+           
+
+        }
+
+
+
+
+
+
+    }
+
+
+    private void OnCollisionExit(Collision collision)
+    {
+
+       
+
+
+
+
+
+
+    }
+
+
 
 }

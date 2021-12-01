@@ -7,6 +7,9 @@ EditorUserSettings:
   m_ConfigSettings:
     RecentlyUsedScenePath-0:
 <<<<<<< HEAD
+      value: 224247031146467e1e0d092c1130103a03121f256c7968252320092a
+=======
+<<<<<<< HEAD
       value: 224247031146467e1e0d092c1130103304121c233827357e38271427fb
       flags: 0
     RecentlyUsedScenePath-1:
@@ -16,6 +19,7 @@ EditorUserSettings:
       value: 224247031146467e1e0d092c1130103a03121f251c3d3c3c2867083debf42d
 =======
       value: 224247031146467e1e0d092c1130103a03121f25623d28393930
+>>>>>>> movimiento_2
 >>>>>>> movimiento_2
       flags: 0
     vcSharedLogLevel:

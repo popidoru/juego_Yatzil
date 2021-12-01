@@ -8,6 +8,8 @@ TagManager:
   - Foto1
   - PuzzlePadres
   - PiecesBlack
+  - Inventario
+  - punto1
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - Objetos
   - Water
   - UI
-  - 
+  - PuntosClave
   - 
   - 
   - 
