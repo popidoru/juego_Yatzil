@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Foto1
   - PuzzlePadres
+  - PiecesBlack
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Piece
+    uniqueID: 323777143
     locked: 0
