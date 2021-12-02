@@ -12,9 +12,10 @@ public class Objetos : MonoBehaviour
     private BoxCollider miBC;
     private GameObject esteObjeto;
     public bool sePuedeAgarrar;
-    public static bool sePuedePoner;
-    private TMP_Text textoInstruccion;
+    public bool sePuedePoner;
+    public TMP_Text textoInstruccion;
     public GameObject instruccion;
+    public puntosClave keypt;
     
 
     // Start is called before the first frame update
@@ -26,22 +27,21 @@ public class Objetos : MonoBehaviour
         miRB = this.gameObject.GetComponent<Rigidbody>();
         miBC = this.gameObject.GetComponent<BoxCollider>();
         esteObjeto = this.gameObject;
-        sePuedeAgarrar = false;
-
         instruccion = GameObject.Find("Canvas/Instruccion");
 
-      
 
 
 
     }
+
+  
 
     // Update is called once per frame
     void Update()
     {
         
 
-        if (sePuedeAgarrar == true)
+        if (sePuedeAgarrar == true || keypt.volverAgarrar == true)
         {
 
 
@@ -54,9 +54,7 @@ public class Objetos : MonoBehaviour
 
                 Debug.Log("Si se presiona la key");
 
-                if (esteObjeto.transform.parent == null)
-                {
-
+               
                   
                     GameObject Inv = GameObject.Find("Viewport/Content");
 
@@ -67,25 +65,12 @@ public class Objetos : MonoBehaviour
                     instruccion.SetActive(false);
                     esteObjeto.transform.rotation = Quaternion.Euler(0, 0, 0);
                     esteObjeto.transform.localPosition = new Vector3(0, 0, -1);
-                    sePuedePoner = true;
-
-                } else
-                {
-
-                  /*  if (esteObjeto.transform.parent.tag == "PuntosClave")
-                    {
-
-                        sePuedeAgarrar = true;
-                        instruccion.SetActive(true);
-                        textoInstruccion = instruccion.GetComponent<TMP_Text>();
-
-                        textoInstruccion.text = "Recoger [E]";
+                    esteObjeto.transform.localScale = new Vector3(60, 60, 60);
 
 
-                    } */
+                sePuedePoner = true;
 
-                }
-               
+              
 
 
 
@@ -101,20 +86,48 @@ public class Objetos : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
+        if (esteObjeto.transform.parent == null)
+        {
 
-        
-        sePuedeAgarrar = true;
+            sePuedeAgarrar = true;
 
-        instruccion.SetActive(true);
+            instruccion.SetActive(true);
 
-        textoInstruccion = instruccion.GetComponent<TMP_Text>();
+            textoInstruccion = instruccion.GetComponent<TMP_Text>();
 
-        textoInstruccion.text = "Recoger [E]";
+            textoInstruccion.text = "Recoger [E]";
 
-       
+            print(esteObjeto);
+
+
+        } else
+        {
+           
+            sePuedeAgarrar = false;
+
+        }
+            
+
+
+
+
+
 
 
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+
+        keypt = other.GetComponent<puntosClave>();
+        print(other);
+
+
+    }
+
+
 
     private void OnCollisionExit(Collision collision)
     {
@@ -122,6 +135,7 @@ public class Objetos : MonoBehaviour
 
         instruccion.SetActive(false);
         sePuedeAgarrar = false;
+        keypt.volverAgarrar = false;
         sePuedePoner = false;
         
 
@@ -130,18 +144,26 @@ public class Objetos : MonoBehaviour
     public void Colocar()
     {
 
-        esteObjeto.transform.SetParent(MovimientoSencillo.posicionClave.transform);
+        if(sePuedePoner == true)
+        {
 
-        esteObjeto.layer = 3;
+            esteObjeto.transform.SetParent(MovimientoSencillo.posicionClave.transform);
 
-        sePuedeAgarrar = true;
+            esteObjeto.layer = 3;
 
-        esteObjeto.transform.rotation = Quaternion.Euler(0, -90, 0);
+            esteObjeto.transform.rotation = Quaternion.Euler(0, -90, 0);
 
-        esteObjeto.transform.localPosition = new Vector3(0, 0, 0);
+            esteObjeto.transform.localPosition = new Vector3(0, 0, 0);
 
-        sePuedePoner = false;
 
-        print("si esta corriendo el evento");
+            esteObjeto.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+
+            sePuedePoner = false;
+
+            print("si esta corriendo el evento");
+
+        }
+
+        
     }
 }

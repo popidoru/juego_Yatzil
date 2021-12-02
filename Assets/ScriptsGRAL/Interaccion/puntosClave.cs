@@ -9,13 +9,14 @@ public class puntosClave : MonoBehaviour
 
     private Transform miPunto;
     private string miTag;
+    public bool volverAgarrar;
 
     // Start is called before the first frame update
     void Start()
     {
 
         miTag = this.gameObject.tag;
-
+        volverAgarrar = false;
     }
 
     // Update is called once per frame
@@ -29,25 +30,64 @@ public class puntosClave : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        
 
-        
-        //Aqui escribir que tiene que pasar cuando el objeto correcto es puesto en el punto clave con un if
-
-
-        if (collision.gameObject.tag == "foto1" && miTag == "punto1")  // Si la tag de mi objeto es correcta, y estoy en cierto punto clave...
+       if (other.tag != "Player")
         {
-            //pasa esto
+
+            other.GetComponent<Objetos>().sePuedePoner = false;
+
+        }
 
 
+        if (other.gameObject.tag == "Foto1" && miTag == "punto1")  // Si la tag de mi objeto es correcta, y estoy en cierto punto clave...
+        {
+            print("tengo a mi paquete");
+            volverAgarrar = false;
+            other.GetComponent<BoxCollider>().enabled = false;
+
+        } else
+        {
+            print(other.tag);
+
+            if (other.tag == "Player")
+            {
+              //  print("vete aaaaa");
+                // print("holi ya se quien eres");
+                volverAgarrar = true;
+
+            }
+           
+            
+        }
+
+
+        if (other.gameObject.tag == "Foto2" && miTag == "punto2")  // Si la tag de mi objeto es correcta, y estoy en cierto punto clave...
+        {
+            
+            volverAgarrar = false;
+            other.GetComponent<BoxCollider>().enabled = false;
+            print("tengo a mi paquete");
+
+        }
+        else
+        {
+            if (other.tag == "Player")
+            {
+                print("vete aaaaa");
+              //  print("holi ya se quien eres");
+                volverAgarrar = true;
+
+            }
 
 
         }
 
 
     }
+
+
 
 
 
