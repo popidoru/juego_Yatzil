@@ -33,12 +33,12 @@ public class puntosClave : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-       if (other.tag != "Player")
+      /* if (other.tag != "Player")
         {
 
             other.GetComponent<Objetos>().sePuedePoner = false;
 
-        }
+        } */
 
 
         if (other.gameObject.tag == "Foto1" && miTag == "punto1")  // Si la tag de mi objeto es correcta, y estoy en cierto punto clave...
@@ -77,6 +77,28 @@ public class puntosClave : MonoBehaviour
             {
                 print("vete aaaaa");
               //  print("holi ya se quien eres");
+                volverAgarrar = true;
+
+            }
+
+
+        }
+
+        if (other.gameObject.tag == "muneca1" && miTag == "puntoM1")  // Si la tag de mi objeto es correcta, y estoy en cierto punto clave...
+        {
+            print("tengo a mi paquete");
+            volverAgarrar = false;
+            other.GetComponent<BoxCollider>().enabled = false;
+
+        }
+        else
+        {
+            print(other.tag);
+
+            if (other.tag == "Player")
+            {
+                //  print("vete aaaaa");
+                // print("holi ya se quien eres");
                 volverAgarrar = true;
 
             }

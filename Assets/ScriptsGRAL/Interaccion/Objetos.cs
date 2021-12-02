@@ -16,6 +16,7 @@ public class Objetos : MonoBehaviour
     public TMP_Text textoInstruccion;
     public GameObject instruccion;
     public puntosClave keypt;
+    public Vector3 miEscala;
     
 
     // Start is called before the first frame update
@@ -27,8 +28,9 @@ public class Objetos : MonoBehaviour
         miRB = this.gameObject.GetComponent<Rigidbody>();
         miBC = this.gameObject.GetComponent<BoxCollider>();
         esteObjeto = this.gameObject;
-        instruccion = GameObject.Find("Canvas/Instruccion");
-
+        instruccion = GameObject.Find("CanvasInventario/Instruccion");
+        miEscala = this.gameObject.transform.localScale;
+        laKey = KeyCode.E;
 
 
 
@@ -42,10 +44,9 @@ public class Objetos : MonoBehaviour
         
 
         if (sePuedeAgarrar == true || keypt.volverAgarrar == true)
+
         {
 
-
-            
 
 
 
@@ -60,12 +61,12 @@ public class Objetos : MonoBehaviour
 
                     esteObjeto.transform.parent = Inv.transform;
                     esteObjeto.layer = 5;
-                    esteObjeto.AddComponent<RectTransform>();
+                  
                     sePuedeAgarrar = false;
                     instruccion.SetActive(false);
                     esteObjeto.transform.rotation = Quaternion.Euler(0, 0, 0);
                     esteObjeto.transform.localPosition = new Vector3(0, 0, -1);
-                    esteObjeto.transform.localScale = new Vector3(60, 60, 60);
+                  
 
 
                 sePuedePoner = true;
@@ -88,7 +89,7 @@ public class Objetos : MonoBehaviour
     {
         if (esteObjeto.transform.parent == null)
         {
-
+            print("no tengo papa");
             sePuedeAgarrar = true;
 
             instruccion.SetActive(true);
@@ -156,7 +157,7 @@ public class Objetos : MonoBehaviour
             esteObjeto.transform.localPosition = new Vector3(0, 0, 0);
 
 
-            esteObjeto.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+            esteObjeto.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
 
             sePuedePoner = false;
 

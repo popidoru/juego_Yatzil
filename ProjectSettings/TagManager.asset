@@ -12,6 +12,8 @@ TagManager:
   - punto1
   - Foto2
   - punto2
+  - muneca1
+  - puntoM1
   layers:
   - Default
   - TransparentFX
