@@ -10215,15 +10215,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1429918325, guid: 5211649a6ee720e429e5cbd638c1cced, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 257
       objectReference: {fileID: 0}
     - target: {fileID: 1429918325, guid: 5211649a6ee720e429e5cbd638c1cced, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1429918325, guid: 5211649a6ee720e429e5cbd638c1cced, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 200.89998
+      value: 200.90002
       objectReference: {fileID: 0}
     - target: {fileID: 1429918326, guid: 5211649a6ee720e429e5cbd638c1cced, type: 3}
       propertyPath: m_Enabled
@@ -10231,11 +10231,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1429918326, guid: 5211649a6ee720e429e5cbd638c1cced, type: 3}
       propertyPath: m_VerticalFit
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1429918326, guid: 5211649a6ee720e429e5cbd638c1cced, type: 3}
       propertyPath: m_HorizontalFit
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1429918327, guid: 5211649a6ee720e429e5cbd638c1cced, type: 3}
       propertyPath: m_CellSize.x
@@ -10248,6 +10248,10 @@ PrefabInstance:
     - target: {fileID: 1429918327, guid: 5211649a6ee720e429e5cbd638c1cced, type: 3}
       propertyPath: m_Padding.m_Top
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429918327, guid: 5211649a6ee720e429e5cbd638c1cced, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1429918327, guid: 5211649a6ee720e429e5cbd638c1cced, type: 3}
       propertyPath: m_Padding.m_Bottom

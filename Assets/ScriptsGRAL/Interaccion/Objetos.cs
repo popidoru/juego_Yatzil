@@ -61,12 +61,13 @@ public class Objetos : MonoBehaviour
 
                     esteObjeto.transform.parent = Inv.transform;
                     esteObjeto.layer = 5;
-                  
+                    esteObjeto.AddComponent<RectTransform>();
                     sePuedeAgarrar = false;
                     instruccion.SetActive(false);
                     esteObjeto.transform.rotation = Quaternion.Euler(0, 0, 0);
                     esteObjeto.transform.localPosition = new Vector3(0, 0, -1);
-                  
+                    esteObjeto.transform.localScale *= 0.5f;
+
 
 
                 sePuedePoner = true;
