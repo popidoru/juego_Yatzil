@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class puntosClave : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class puntosClave : MonoBehaviour
     private Transform miPunto;
     private string miTag;
     public bool volverAgarrar;
-
+    public TMP_Text textoInstruccion;
+    public GameObject instruccion;
 
     //Variables Puzzle Cocina
     public GameObject Maiz;
@@ -29,6 +31,7 @@ public class puntosClave : MonoBehaviour
 
         miTag = this.gameObject.tag;
         volverAgarrar = false;
+        instruccion = GameObject.Find("CanvasInventario/Instruccion");
     }
 
     // Update is called once per frame
@@ -44,13 +47,18 @@ public class puntosClave : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "Player")
+        {
 
-        /* if (other.tag != "Player")
-          {
+            instruccion.SetActive(true);
 
-              other.GetComponent<Objetos>().sePuedePoner = false;
+            textoInstruccion = instruccion.GetComponent<TMP_Text>();
 
-          } */
+            textoInstruccion.text = "Colocar [Z]";
+
+
+        }
+
 
 
         if (other.gameObject.tag == "Foto1" && miTag == "punto1")  // Si la tag de mi objeto es correcta, y estoy en cierto punto clave...
@@ -267,5 +275,19 @@ public class puntosClave : MonoBehaviour
 
             }
         }
+    }
+
+     void OnTriggerExit(Collider other)
+    {
+
+        if (other.tag == "Player")
+        {
+
+            instruccion.SetActive(false);
+
+        }
+        
+
+
     }
 }

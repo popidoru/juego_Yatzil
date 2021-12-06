@@ -146,7 +146,7 @@ public class Objetos : MonoBehaviour
         instruccion.SetActive(false);
         sePuedeAgarrar = false;
         keypt.volverAgarrar = false;
-        sePuedePoner = false;
+      //  sePuedePoner = false;
 
 
     }
