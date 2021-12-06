@@ -16,6 +16,8 @@ TagManager:
   - puntoM1
   - Foto3
   - Foto4
+  - punto3
+  - punto4
   layers:
   - Default
   - TransparentFX

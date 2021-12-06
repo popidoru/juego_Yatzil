@@ -45,6 +45,7 @@ public class puntosClave : MonoBehaviour
         {
             print("tengo a mi paquete");
             volverAgarrar = false;
+         //   other.transform.localScale *= 0.3f;
             other.GetComponent<BoxCollider>().enabled = false;
 
         } else
@@ -67,6 +68,7 @@ public class puntosClave : MonoBehaviour
         {
             
             volverAgarrar = false;
+         //   other.transform.localScale *= 0.3f;
             other.GetComponent<BoxCollider>().enabled = false;
             print("tengo a mi paquete");
 
@@ -77,6 +79,50 @@ public class puntosClave : MonoBehaviour
             {
                 print("vete aaaaa");
               //  print("holi ya se quien eres");
+                volverAgarrar = true;
+
+            }
+
+
+        }
+
+        if (other.gameObject.tag == "Foto3" && miTag == "punto3")  // Si la tag de mi objeto es correcta, y estoy en cierto punto clave...
+        {
+
+            volverAgarrar = false;
+         //   other.transform.localScale *= 0.3f;
+            other.GetComponent<BoxCollider>().enabled = false;
+            print("tengo a mi paquete");
+
+        }
+        else
+        {
+            if (other.tag == "Player")
+            {
+                print("vete aaaaa");
+                //  print("holi ya se quien eres");
+                volverAgarrar = true;
+
+            }
+
+
+        }
+
+        if (other.gameObject.tag == "Foto4" && miTag == "punto4")  // Si la tag de mi objeto es correcta, y estoy en cierto punto clave...
+        {
+
+            volverAgarrar = false;
+           // other.transform.localScale *= 0.3f;
+            other.GetComponent<BoxCollider>().enabled = false;
+            print("tengo a mi paquete");
+
+        }
+        else
+        {
+            if (other.tag == "Player")
+            {
+                print("vete aaaaa");
+                //  print("holi ya se quien eres");
                 volverAgarrar = true;
 
             }
