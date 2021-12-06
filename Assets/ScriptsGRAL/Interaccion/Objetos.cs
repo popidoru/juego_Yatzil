@@ -7,6 +7,7 @@ public class Objetos : MonoBehaviour
 {
     public Rigidbody miRB;
     public string miTag;
+    public string puntoClaveTag;
     public LayerMask miLayer;
     public KeyCode laKey;
     private BoxCollider miBC;
@@ -17,7 +18,8 @@ public class Objetos : MonoBehaviour
     public GameObject instruccion;
     public puntosClave keypt;
     public Vector3 miEscala;
-    
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,12 +38,12 @@ public class Objetos : MonoBehaviour
 
     }
 
-  
+
 
     // Update is called once per frame
     void Update()
     {
-        
+
 
         if (sePuedeAgarrar == true || keypt.volverAgarrar == true)
 
@@ -55,31 +57,31 @@ public class Objetos : MonoBehaviour
 
                 Debug.Log("Si se presiona la key");
 
-               
-                  
-                    GameObject Inv = GameObject.Find("Viewport/Content");
 
-                    esteObjeto.transform.parent = Inv.transform;
-                    esteObjeto.layer = 5;
-                    esteObjeto.AddComponent<RectTransform>();
-                    sePuedeAgarrar = false;
-                    instruccion.SetActive(false);
-                    esteObjeto.transform.rotation = Quaternion.Euler(0, 0, 0);
-                    esteObjeto.transform.localPosition = new Vector3(0, 0, -1);
-                    esteObjeto.transform.localScale *= 0.5f;
+
+                GameObject Inv = GameObject.Find("Viewport/Content");
+
+                esteObjeto.transform.parent = Inv.transform;
+                esteObjeto.layer = 5;
+                esteObjeto.AddComponent<RectTransform>();
+                sePuedeAgarrar = false;
+                instruccion.SetActive(false);
+                esteObjeto.transform.rotation = Quaternion.Euler(0, 0, 0);
+                esteObjeto.transform.localPosition = new Vector3(0, 0, -1);
+                esteObjeto.transform.localScale *= 0.5f;
 
 
 
                 sePuedePoner = true;
 
-              
+
 
 
 
             }
 
 
-    }
+        }
 
 
 
@@ -102,13 +104,14 @@ public class Objetos : MonoBehaviour
             print(esteObjeto);
 
 
-        } else
+        }
+        else
         {
-           
+
             sePuedeAgarrar = false;
 
         }
-            
+
 
 
 
@@ -122,8 +125,13 @@ public class Objetos : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-
+        print("Entro el trigger");
         keypt = other.GetComponent<puntosClave>();
+
+        if (puntoClaveTag == keypt.GetTag())
+        {
+            sePuedePoner = true;
+        }
         print(other);
 
 
@@ -133,20 +141,20 @@ public class Objetos : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-       
+
 
         instruccion.SetActive(false);
         sePuedeAgarrar = false;
         keypt.volverAgarrar = false;
         sePuedePoner = false;
-        
+
 
     }
 
     public void Colocar()
     {
 
-        if(sePuedePoner == true)
+        if (sePuedePoner == true)
         {
 
             esteObjeto.transform.SetParent(MovimientoSencillo.posicionClave.transform);
@@ -166,6 +174,6 @@ public class Objetos : MonoBehaviour
 
         }
 
-        
+
     }
 }
