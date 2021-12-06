@@ -18,6 +18,14 @@ TagManager:
   - Foto4
   - punto3
   - punto4
+  - Maiz
+  - MaizHerbido
+  - Masa
+  - PuntoOlla
+  - PuntoMetate
+  - PuntoPlato
+  - MaizSinHoja
+  - PuntoMolino
   layers:
   - Default
   - TransparentFX
