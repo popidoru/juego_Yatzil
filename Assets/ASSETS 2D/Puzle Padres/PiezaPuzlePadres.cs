@@ -13,7 +13,6 @@ public class PiezaPuzlePadres : MonoBehaviour
     {
         correctPosition = transform.position; //La POSICIÓN CORRECTA es de acuerdo a la posición actual de la pieza del puzzle
         transform.position = new Vector3(Random.Range(5f, 10f), Random.Range(3f, 10f)); //Cuando inicia el juego, pone las piezas de forma random, para que el jugador encuentre la posición correcta
-
     }
 
     
@@ -23,7 +22,7 @@ public class PiezaPuzlePadres : MonoBehaviour
         {
             transform.position = correctPosition;  // La posición actual se convierte en la POSICIÓN CORRECTA
             inPlace = true; //El LUGAR CORRECTO SE ACTIVA
-            GetComponent<SortingGroup>().sortingOrder = 0;  //Se regresa el ORDEN DE LAYER al default
+           // GetComponent<SortingGroup>().sortingOrder = 0;  //Se regresa el ORDEN DE LAYER al default
 
             //GameObject.Find("PointsHandler").GetComponent<WinPuzlePadres>().AddPoints(); //Llama a la acción AddPoints que se encuentra en el script de WinPuzlePadres
             

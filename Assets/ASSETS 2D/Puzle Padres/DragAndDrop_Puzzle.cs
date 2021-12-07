@@ -11,13 +11,12 @@ public class DragAndDrop_Puzzle : MonoBehaviour
     Ray ray; // Nombre rayo
 
     int orderLayer;
-
     public PiezaPuzlePadres piezas;
 
-
+    public float onSelect, unSelect;
     void Start()
     {
-        
+
     }
 
 
@@ -43,9 +42,10 @@ public class DragAndDrop_Puzzle : MonoBehaviour
                 
                 if (!hit.transform.GetComponent<PiezaPuzlePadres>().inPlace) //Si el rayo está en la posición correcta, entonces...
                 {
+                    
                     obj = hit.transform; // La posición del objeto se transforma a donde pegue el rayo
-                    obj.GetComponent<SortingGroup>().sortingOrder = orderLayer;  // orderLayer se obtiene accediendo al SortingGroup del objeto seleccionado
-                    orderLayer++; //Se añade una layer más al objeto seleccionado, sirve para que la pieza seleccionada se vea ALFRENTE y no se esconda entre las demás
+                    unSelect = obj.position.z;
+                    obj.position = new Vector3(obj.position.x, obj.position.y, obj.position.z - 1);
                 }
             }
         }
@@ -54,16 +54,16 @@ public class DragAndDrop_Puzzle : MonoBehaviour
         {
             if (obj != null)
             {
+                obj.position = new Vector3(obj.position.x, obj.position.y, unSelect);
                 obj = null; // El objeto se transforma en nulo
 
-
+               
             }
         }
 
-        if (obj != null) // Si el objeto es nulo
+        if (obj != null) // Si el objeto no es nulo
         {
             obj.position = new Vector3(mPos.x, mPos.y, obj.position.z); // Se crea un nuevo vector3 a partir de la posición del mouse
-
         }
 
     }
