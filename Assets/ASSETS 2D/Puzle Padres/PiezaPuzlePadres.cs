@@ -22,9 +22,6 @@ public class PiezaPuzlePadres : MonoBehaviour
         {
             transform.position = correctPosition;  // La posición actual se convierte en la POSICIÓN CORRECTA
             inPlace = true; //El LUGAR CORRECTO SE ACTIVA
-           // GetComponent<SortingGroup>().sortingOrder = 0;  //Se regresa el ORDEN DE LAYER al default
-
-            //GameObject.Find("PointsHandler").GetComponent<WinPuzlePadres>().AddPoints(); //Llama a la acción AddPoints que se encuentra en el script de WinPuzlePadres
             
         }
 
