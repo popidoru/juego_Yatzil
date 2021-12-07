@@ -45,7 +45,7 @@ public class DragAndDrop_Puzzle : MonoBehaviour
                     
                     obj = hit.transform; // La posición del objeto se transforma a donde pegue el rayo
                     unSelect = obj.position.z;
-                    obj.position = new Vector3(obj.position.x, obj.position.y, obj.position.z - 1);
+                    obj.position = new Vector3(obj.position.x, obj.position.y, obj.position.z - 0.5f);
                 }
             }
         }
