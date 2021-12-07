@@ -1998,7 +1998,7 @@ GameObject:
   - component: {fileID: 162779506}
   m_Layer: 3
   m_Name: "Mu\xF1eca3"
-  m_TagString: muneca1
+  m_TagString: muneca3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3278,7 +3278,7 @@ GameObject:
   - component: {fileID: 358312126}
   m_Layer: 3
   m_Name: "Mu\xF1eca7"
-  m_TagString: muneca1
+  m_TagString: muneca7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4264,7 +4264,7 @@ GameObject:
   - component: {fileID: 426514762}
   m_Layer: 3
   m_Name: "Mu\xF1eca4"
-  m_TagString: muneca1
+  m_TagString: muneca4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5943,7 +5943,7 @@ GameObject:
   - component: {fileID: 630040325}
   m_Layer: 3
   m_Name: "Mu\xF1eca2"
-  m_TagString: muneca1
+  m_TagString: muneca2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6494,7 +6494,7 @@ GameObject:
   - component: {fileID: 675895479}
   m_Layer: 3
   m_Name: "Mu\xF1eca6"
-  m_TagString: muneca1
+  m_TagString: muneca6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12749,6 +12749,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 62a688c9273795346bea3a1f36ed7439, type: 3}
   m_PrefabInstance: {fileID: 1340740598}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1348651903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1209443999311908387, guid: 4855bbba065efac4a8194727e77052f6, type: 3}
+  m_PrefabInstance: {fileID: 2102840370}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1348651905
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348651903}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07059455, y: 0.022802545, z: -0.02}
+  m_Center: {x: -0.000000009313226, y: -0.0000000013969841, z: -0.038}
+--- !u!65 &1348651907
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348651903}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.022802545, z: 0.09561973}
+  m_Center: {x: 0.033, y: -0.0000000013969841, z: -0.000000059604645}
 --- !u!1 &1354176966
 GameObject:
   m_ObjectHideFlags: 0
@@ -15739,7 +15770,7 @@ GameObject:
   - component: {fileID: 1694611013}
   m_Layer: 3
   m_Name: "Mu\xF1eca8"
-  m_TagString: muneca1
+  m_TagString: muneca8
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15867,7 +15898,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 61a0d66658cfd1845a5a6463b4b3c033, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99fd13df304fd1e41be3835569870c43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15886,7 +15917,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694611012}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.06, y: 2.54, z: -70.8}
+  m_LocalPosition: {x: 1.06, y: 3.06, z: -70.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -16023,7 +16054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2590530237863751080, guid: 75b7a77637d14a84fa6c0fc5c17f307f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -206.74
+      value: -209.01
       objectReference: {fileID: 0}
     - target: {fileID: 2590530237863751080, guid: 75b7a77637d14a84fa6c0fc5c17f307f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16052,6 +16083,10 @@ PrefabInstance:
     - target: {fileID: 2590530237863751080, guid: 75b7a77637d14a84fa6c0fc5c17f307f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590530237863751081, guid: 75b7a77637d14a84fa6c0fc5c17f307f, type: 3}
+      propertyPath: m_Center.x
+      value: -0.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75b7a77637d14a84fa6c0fc5c17f307f, type: 3}
@@ -19384,7 +19419,7 @@ GameObject:
   - component: {fileID: 2041493117}
   m_Layer: 3
   m_Name: "Mu\xF1eca5"
-  m_TagString: muneca1
+  m_TagString: muneca5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20932,7 +20967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1429918325, guid: 5211649a6ee720e429e5cbd638c1cced, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 200.90007
+      value: 200.8998
       objectReference: {fileID: 0}
     - target: {fileID: 1429918326, guid: 5211649a6ee720e429e5cbd638c1cced, type: 3}
       propertyPath: m_Enabled

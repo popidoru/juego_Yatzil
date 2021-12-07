@@ -26,6 +26,13 @@ TagManager:
   - PuntoPlato
   - MaizSinHoja
   - PuntoMolino
+  - muneca2
+  - muneca3
+  - muneca4
+  - muneca5
+  - muneca6
+  - muneca7
+  - muneca8
   layers:
   - Default
   - TransparentFX
