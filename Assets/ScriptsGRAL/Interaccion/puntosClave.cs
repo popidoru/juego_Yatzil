@@ -32,6 +32,7 @@ public class puntosClave : MonoBehaviour
 
         miTag = this.gameObject.tag;
         volverAgarrar = false;
+        instruccion = GameObject.Find("CanvasInventario/Instruccion");
     }
 
     // Update is called once per frame
